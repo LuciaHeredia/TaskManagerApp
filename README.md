@@ -18,6 +18,8 @@ task_manager/
 │   └── task_manager.py      # Task loading & saving logic
 │── templates/
 │   └── index.html           # HTML for visualization
+│── static/
+│   └── style.css            # CSS style
 └── tasks.json               # Stores tasks
 ```
 ## CLI Steps:
