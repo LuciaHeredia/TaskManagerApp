@@ -26,5 +26,6 @@ task_manager/
 └── tasks.json               # Stores tasks
 ```
 ## CLI Steps:
-1️⃣ Run: ```pip install flask``` \
-2️⃣ Start the server with: ```python3 task_manager/app.py```
+1️⃣ Clone this project using the web *URL*. \
+2️⃣ Run: ```pip install flask``` \
+3️⃣ Start the server with: ```python3 task_manager/app.py```
