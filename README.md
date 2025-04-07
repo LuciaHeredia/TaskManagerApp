@@ -22,4 +22,4 @@ task_manager/
 ```
 ## CLI Steps:
 1️⃣ Run: ```pip install flask``` \
-2️⃣ Start the server with: ```python task_manager.py```
+2️⃣ Start the server with: ```python3 task_manager/app.py```
