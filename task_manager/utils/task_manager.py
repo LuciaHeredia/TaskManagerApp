@@ -19,7 +19,7 @@ def save_tasks(task_file, tasks):
         # convert list to JSON-formatted string and write it to the file
         json.dump(tasks, f, indent=4)
 
-def add_task(description, task_file, tasks):
+def add_task(description, task_file):
     """Add new task to the JSON file"""
     if description: # isn't empty
         tasks = load_tasks(task_file)
