@@ -1,7 +1,7 @@
 # Project: Personal Task Manager (CLI-Based)
 A simple command-line task manager to add, list, complete, and delete tasks.
 
-<img src = "zREADME-pics/tasks.png" width=400> <br/>
+<img src = "zREADME-pics/tasks.png"> <br/>
 
 ## Features:
 ✅ **Add Tasks** – Store tasks with due dates \
