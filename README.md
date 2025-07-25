@@ -1,17 +1,11 @@
-# Project: Personal Task Manager (CLI-Based)
-A simple command-line task manager to add, list, complete, and delete tasks.
+# Upgraded Project: Personal Task Manager + PDF export (CLI-Based)
+**"Task manager"** exports the task list from the app as a *PDF*, and automatically commit and push it to a *repository* (or upload to S3 or GDrive).
 
-<img src = "zREADME-pics/tasks.png"> <br/>
+## New Features:
+✅ **??** – ??? \
+✅ **??** – ???
 
-## Features:
-✅ **Add Tasks** – Store tasks with due dates \
-✅ **List Tasks** – Show pending and completed tasks \
-✅ **Complete Tasks** – Mark tasks as done \
-✅ **Delete Tasks** – Remove tasks when no longer needed \
-✅ **Data Persistence** – Save tasks in a JSON file \
-✅ **Web UI** - For visualization and live updates via page reload 
-
-## Folders Structure:
+## New Folders Structure:
 ```
 task_manager/
 │── app.py                   # Main Flask app
@@ -26,6 +20,6 @@ task_manager/
 └── tasks.json               # Stores tasks
 ```
 ## CLI Steps:
-1️⃣ Clone this project using the web *URL*. \
-2️⃣ Run: ```pip install flask``` \
-3️⃣ Start the server with: ```python3 task_manager/app.py```
+1️⃣ ?? \
+2️⃣ ?? \
+3️⃣ ??
