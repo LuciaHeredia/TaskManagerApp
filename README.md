@@ -1,8 +1,12 @@
-# Project: Task Manager + PDF export (GitHub Actions pipeline + AWS S3)
-**"Task manager"** exports the task list from the app as a *PDF*, and automatically uploads it to an **AWS S3 bucket** at a specific time using **GitHub Actions**.
+# 📋 Task Manager  
+### Automates your tasks with Python, GitHub Actions, and AWS S3
+
+**"Task manager"** is an automation tool that manages your tasks, exports them as a *PDF*, and uploads the report to an **AWS S3 bucket** every day at a scheduled time using **GitHub Actions**.
 > You must clone this project using the web *URL* and save it in your own **Github repository** for the **GitHub Actions** to work.
 
-## Features:
+<img src="zREADME-pics/tasks.png"/> <br/>
+
+## 🧩 Features:
 ✅ **Add Tasks** – Store tasks with due dates \
 ✅ **List Tasks** – Show pending and completed tasks \
 ✅ **Complete Tasks** – Mark tasks as done \
@@ -11,7 +15,7 @@
 ✅ **Web UI** - For visualization and live updates via page reload \
 ✅ **PDF Export** – Automatically export a PDF and uploads it to an AWS S3 bucket at a specific time
 
-## Folders Structure:
+## 📁 Folders Structure:
 ```
 TaskManagerApp
 │── .github/
@@ -35,18 +39,18 @@ TaskManagerApp
     └── tasks.json                  # Stores tasks
 ```
 
-## Logic Flow:
+## 🧠 Logic Flow:
 1. At e.g. **00:00** UTC daily 
 2. **GitHub Actions** pulls the latest version of your repository
 3. Runs *export_tasks.py* → generates *tasks_report_DATE.pdf*
 4. Runs *upload_pdf_to_s3.py* → uploads the *PDF* to your **AWS S3 bucket**
 
-## Manual test:
+## 🕹️ Manual test:
 1. Push your latest *tasks.json* to **GitHub**
 2. Go to **GitHub** → "Actions tab" → "Export Tasks and Upload to S3"
 3. Click “Run workflow”, it will run the full *pipeline* and upload the *PDF*
 
-## Requirements:
+## 📦 Requirements:
 1. Create an **AWS S3 Bucket**:
     - Go to "AWS S3 Console" → "Create bucket"
     - Fill *Name*(e.g. tasks-pdf-storage), *Region* and uncheck *Block all public access* only if you want public files
@@ -69,7 +73,7 @@ TaskManagerApp
         - AWS_REGION : 	e.g. us-east-2
         - S3_BUCKET_NAME : e.g. tasks-pdf-storage
 
-## CLI Steps:
+## 💻 CLI Steps:
 > Change *schedule time* in **workflow** *export-and-push.yml* before you start.
 
 1️⃣ Clone this project using the web *URL* and also save it in your own **Github repository**. \
