@@ -68,9 +68,11 @@ TaskManagerApp
         - AWS_ACCESS_KEY_ID : Your Access Key ID
         - AWS_SECRET_ACCESS_KEY : Your Secret Access Key
         - AWS_REGION : 	e.g. us-east-2
-        - S3_BUCKET_NAME : e.g. task-pdf-storage
+        - S3_BUCKET_NAME : e.g. tasks-pdf-storage
 
 ## CLI Steps:
+> Change *schedule time* in **workflow** *export-and-push.yml* before you start.
+
 1️⃣ Clone this project using the web *URL* and also save it in your own **Github repository**. \
 2️⃣ Run: ```pip install -r task_manager/requirements.txt``` \
 3️⃣ Start the server with: ```python3 task_manager/app.py```
