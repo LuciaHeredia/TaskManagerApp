@@ -6,7 +6,7 @@ on:
     branches:
       - export-tasks
   schedule:
-    - cron: "38 0 * * *"  # Every day at 00:38 UTC
+    - cron: "5 1 * * *"  # Every day at 01:05 UTC
   workflow_dispatch:      # Allow manual triggering via GitHub UI
     inputs:
       branch:
