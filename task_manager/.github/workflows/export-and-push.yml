@@ -2,10 +2,16 @@ name: Export Tasks and Upload to S3
 
 # When to run this workflow
 on:
+  push:
+    branches:
+      - export-tasks
   schedule:
     - cron: "35 00 * * *"  # Every day at 00:35 UTC
   workflow_dispatch:      # Allow manual triggering via GitHub UI
-
+    inputs:
+      branch:
+        description: 'Branch to run on'
+        default: export-tasks
 jobs:
   export_and_upload:
     runs-on: ubuntu-latest  # Use latest Ubuntu runner provided by GitHub
