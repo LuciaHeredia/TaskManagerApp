@@ -14,10 +14,13 @@ if not pdf_files:
     raise FileNotFoundError("❌ No PDF files found in the 'reports' folder.")
 
 pdf_file = pdf_files[0]
+original_path = os.path.join(reports_folder, pdf_file)
 
-# Upload to S3 with full key: e.g. task_manager/reports/filename_datetime.pdf
-current_datetime = datetime.today().strftime('%d-%m-%Y_%H-%M-%S') # day-month-year_hour-min-sec
+# Rename the file for upload
+timestamp = datetime.today().strftime('%d-%m-%Y_%H-%M-%S')
+new_filename = f"tasks_report_{timestamp}.pdf"
+
+# Upload to root of S3 bucket (no folders)
 s3 = boto3.client("s3", region_name=region)
-s3.upload_file(pdf_file, bucket_name, f"{current_datetime}_{pdf_file}")
-
-print(f"✅ Uploaded {pdf_file} to s3://{bucket_name}/{current_datetime}_{pdf_file}")
+s3.upload_file(original_path, bucket_name, new_filename)
+print(f"✅ Uploaded as s3://{bucket_name}/{new_filename}")
