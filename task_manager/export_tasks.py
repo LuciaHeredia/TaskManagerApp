@@ -22,7 +22,7 @@ for i, task in enumerate(tasks, start=1):
     status = "Done" if task.get("completed") else "Not done"
     pdf.cell(200, 10, txt=f"{i}. {desc} [{status}]", ln=True)
 
-# Save with current date
-filename = f"tasks_report_{current_datetime}.pdf"
-pdf.output(filename)
+# Save
+filename = "tasks_report.pdf"
+pdf.output(f"task_manager/reports/{filename}")
 print(f"Saved: {filename}")
