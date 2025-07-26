@@ -14,25 +14,26 @@
 
 ## Folders Structure:
 ```
-task_manager/
-│── app.py                      # Main Flask app
-│── export_tasks.py             # NEW: Export tasks as PDF
-├── upload_to_s3.py             # NEW: Upload PDF to a S3 bucket
-│── requirements.txt            # NEW: Requirements file
+TaskManagerApp
 │── .github/
 │   └── workflow/
 │       └── export-and-push.yml # NEW: Export PDF and upload to a S3 bucket
-├── reports/
-│   └── tasks_report.pdf        # NEW: PDF tasks report
-│── routes/
-│   └── task_routes.py          # Task-related routes
-│── utils/
-│   └── task_manager.py         # Task loading & saving logic
-│── templates/
-│   └── index.html              # HTML for visualization
-│── static/
-│   └── style.css               # CSS style
-└── tasks.json                  # Stores tasks
+└── task_manager/
+    │── app.py                      # Main Flask app
+    │── export_tasks.py             # NEW: Export tasks as PDF
+    │── upload_to_s3.py             # NEW: Upload PDF to a S3 bucket
+    │── requirements.txt            # NEW: Requirements file
+    │── reports/
+    │   └── tasks_report.pdf        # NEW: PDF tasks report
+    │── routes/
+    │   └── task_routes.py          # Task-related routes
+    │── utils/
+    │   └── task_manager.py         # Task loading & saving logic
+    │── templates/
+    │   └── index.html              # HTML for visualization
+    │── static/
+    │   └── style.css               # CSS style
+    └── tasks.json                  # Stores tasks
 ```
 
 ## Logic Flow:
@@ -72,4 +73,4 @@ task_manager/
 ## CLI Steps:
 1️⃣ Clone this project using the web *URL* and also save it in your own **Github repository**. \
 2️⃣ Run: ```pip install -r task_manager/requirements.txt``` \
-3️⃣ ??
+3️⃣ Start the server with: ```python3 task_manager/app.py```
