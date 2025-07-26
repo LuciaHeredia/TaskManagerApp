@@ -1,15 +1,14 @@
-# Upgraded Project: Personal Task Manager + PDF export (GitHub Actions pipeline + AWS S3)
+# Project: Task Manager + PDF export (GitHub Actions pipeline + AWS S3)
 **"Task manager"** exports the task list from the app as a *PDF*, and automatically uploads it to an **AWS S3 bucket** at a specific time using **GitHub Actions**.
 > You must clone this project using the web *URL* and save it in your own **Github repository** for the **GitHub Actions** to work.
 
 ## Features:
-**Add Tasks** – Store tasks with due dates \
-**List Tasks** – Show pending and completed tasks \
-**Complete Tasks** – Mark tasks as done \
-**Delete Tasks** – Remove tasks when no longer needed \
-**Data Persistence** – Save tasks in a JSON file \
-**Web UI** - For visualization and live updates via page reload \
-*New Features:* \
+✅ **Add Tasks** – Store tasks with due dates \
+✅ **List Tasks** – Show pending and completed tasks \
+✅ **Complete Tasks** – Mark tasks as done \
+✅ **Delete Tasks** – Remove tasks when no longer needed \
+✅ **Data Persistence** – Save tasks in a JSON file \
+✅ **Web UI** - For visualization and live updates via page reload \
 ✅ **PDF Export** – Automatically export a PDF and uploads it to an AWS S3 bucket at a specific time
 
 ## Folders Structure:
@@ -17,14 +16,14 @@
 TaskManagerApp
 │── .github/
 │   └── workflow/
-│       └── export-and-push.yml # NEW: Export PDF and upload to a S3 bucket
+│       └── export-and-push.yml     # Export PDF and upload to a S3 bucket
 └── task_manager/
     │── app.py                      # Main Flask app
-    │── export_tasks.py             # NEW: Export tasks as PDF
-    │── upload_to_s3.py             # NEW: Upload PDF to a S3 bucket
-    │── requirements.txt            # NEW: Requirements file
+    │── export_tasks.py             # Export tasks as PDF
+    │── upload_to_s3.py             # Upload PDF to a S3 bucket
+    │── requirements.txt            # Requirements file
     │── reports/
-    │   └── tasks_report.pdf        # NEW: PDF tasks report
+    │   └── tasks_report.pdf        # PDF tasks report
     │── routes/
     │   └── task_routes.py          # Task-related routes
     │── utils/
