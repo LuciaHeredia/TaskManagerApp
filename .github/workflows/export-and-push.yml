@@ -1,0 +1,45 @@
+name: Export Tasks and Upload to S3
+
+# When to run this workflow
+on:
+  push:
+    branches:
+      - export-tasks
+  schedule:
+    - cron: "40 1 * * *"  # Every day at 01:40 UTC
+  workflow_dispatch:      # Allow manual triggering via GitHub UI
+    inputs:
+      branch:
+        description: 'Branch to run on'
+        default: export-tasks
+jobs:
+  export_and_upload:
+    runs-on: ubuntu-latest  # Use latest Ubuntu runner provided by GitHub
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      # Downloads repo files into the GitHub runner
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+        # Installs Python 3.10 to run scripts
+
+    - name: Install Python dependencies
+      run: pip install -r task_manager/requirements.txt
+      # Installs packages listed in requirements.txt
+
+    - name: Generate PDF from tasks
+      run: python3 task_manager/export_tasks.py
+      # Runs script to convert tasks.json into a PDF saved in /reports
+
+    - name: Upload PDF to AWS S3
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ${{ secrets.AWS_REGION }}
+        S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+      run: python3 task_manager/upload_to_s3.py
+      # Runs upload script with environment variables securely passed in from GitHub Secrets
