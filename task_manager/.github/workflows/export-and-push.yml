@@ -26,7 +26,7 @@ jobs:
       # Installs packages listed in requirements.txt
 
     - name: Generate PDF from tasks
-      run: python export_tasks.py
+      run: python task_manager/export_tasks.py
       # Runs script to convert tasks.json into a PDF saved in /reports
 
     - name: Upload PDF to AWS S3
@@ -35,5 +35,5 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: ${{ secrets.AWS_REGION }}
         S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
-      run: python upload_to_s3.py
+      run: python task_manager/upload_to_s3.py
       # Runs upload script with environment variables securely passed in from GitHub Secrets
